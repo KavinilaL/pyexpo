@@ -1,32 +1,86 @@
 [
   {
-    "name": "Marketplace",
-    "quantity": 2458,
-    "date": "12.Jan.2021",
-    "progress": 75.5
+    "month": "Jan.2024",
+    "totalConsumption": 3450,
+    "peakDemand": 42,
+    "averageDailyUsage": 111.3,
+    "carbonEmissions": 1725
   },
   {
-    "name": "Venus DB PRO",
-    "quantity": 1485,
-    "date": "21.Feb.2021",
-    "progress": 35.4
+    "month": "Feb.2024",
+    "totalConsumption": 3180,
+    "peakDemand": 38,
+    "averageDailyUsage": 113.6,
+    "carbonEmissions": 1590
   },
   {
-    "name": "Venus DS",
-    "quantity": 1024,
-    "date": "13.Mar.2021",
-    "progress": 25
+    "month": "Mar.2024",
+    "totalConsumption": 2975,
+    "peakDemand": 35,
+    "averageDailyUsage": 96.0,
+    "carbonEmissions": 1488
   },
   {
-    "name": "Venus 3D Asset",
-    "quantity": 858,
-    "date": "24.Jan.2021",
-    "progress": 100
+    "month": "Apr.2024",
+    "totalConsumption": 2850,
+    "peakDemand": 33,
+    "averageDailyUsage": 95.0,
+    "carbonEmissions": 1425
   },
   {
-    "name": "Marketplace",
-    "quantity": 258,
-    "date": "Oct 24, 2022",
-    "progress": 75
+    "month": "May.2024",
+    "totalConsumption": 3320,
+    "peakDemand": 40,
+    "averageDailyUsage": 107.1,
+    "carbonEmissions": 1660
+  },
+  {
+    "month": "Jun.2024",
+    "totalConsumption": 3675,
+    "peakDemand": 45,
+    "averageDailyUsage": 122.5,
+    "carbonEmissions": 1838
+  },
+  {
+    "month": "Jul.2024",
+    "totalConsumption": 4120,
+    "peakDemand": 49,
+    "averageDailyUsage": 132.9,
+    "carbonEmissions": 2060
+  },
+  {
+    "month": "Aug.2024",
+    "totalConsumption": 3980,
+    "peakDemand": 47,
+    "averageDailyUsage": 128.4,
+    "carbonEmissions": 1990
+  },
+  {
+    "month": "Sep.2024",
+    "totalConsumption": 3540,
+    "peakDemand": 41,
+    "averageDailyUsage": 118.0,
+    "carbonEmissions": 1770
+  },
+  {
+    "month": "Oct.2024",
+    "totalConsumption": 3275,
+    "peakDemand": 39,
+    "averageDailyUsage": 105.6,
+    "carbonEmissions": 1638
+  },
+  {
+    "month": "Nov.2024",
+    "totalConsumption": 3025,
+    "peakDemand": 36,
+    "averageDailyUsage": 100.8,
+    "carbonEmissions": 1513
+  },
+  {
+    "month": "Dec.2024",
+    "totalConsumption": 3750,
+    "peakDemand": 44,
+    "averageDailyUsage": 121.0,
+    "carbonEmissions": 1875
   }
 ]

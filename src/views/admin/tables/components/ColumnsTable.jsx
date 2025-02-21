@@ -15,10 +15,10 @@ function ColumnsTable(props) {
   const [sorting, setSorting] = React.useState([]);
   let defaultData = tableData;
   const columns = [
-    columnHelper.accessor("name", {
-      id: "name",
+    columnHelper.accessor("month", {
+      id: "month",
       header: () => (
-        <p className="text-sm font-bold text-gray-600 dark:text-white">NAME</p>
+        <p className="text-sm font-bold text-gray-600 dark:text-white">MONTH</p>
       ),
       cell: (info) => (
         <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -26,11 +26,11 @@ function ColumnsTable(props) {
         </p>
       ),
     }),
-    columnHelper.accessor("progress", {
-      id: "progress",
+    columnHelper.accessor("carbonEmissions", {
+      id: "carbonEmissions",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          PROGRESS
+          CARBON EMISSION (0.5kg/kWh)
         </p>
       ),
       cell: (info) => (
@@ -39,11 +39,11 @@ function ColumnsTable(props) {
         </p>
       ),
     }),
-    columnHelper.accessor("quantity", {
-      id: "quantity",
+    columnHelper.accessor("totalConsumption", {
+      id: "totalConsumption",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          QUANTITY
+          TOTAL CONSUMPTION (kWh)
         </p>
       ),
       cell: (info) => (
@@ -52,10 +52,10 @@ function ColumnsTable(props) {
         </p>
       ),
     }),
-    columnHelper.accessor("date", {
-      id: "date",
+    columnHelper.accessor("averageDailyUsage", {
+      id: "averageDailyUsage",
       header: () => (
-        <p className="text-sm font-bold text-gray-600 dark:text-white">DATE</p>
+        <p className="text-sm font-bold text-gray-600 dark:text-white">AVERAGE USAGE (KW/DAY) </p>
       ),
       cell: (info) => (
         <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -80,7 +80,7 @@ function ColumnsTable(props) {
     <Card extra={"w-full pb-10 p-4 h-full"}>
       <header className="relative flex items-center justify-between">
         <div className="text-xl font-bold text-navy-700 dark:text-white">
-          4-Columns Table
+          Electricity Usage Bill
         </div>
         <CardMenu />
       </header>
@@ -117,7 +117,7 @@ function ColumnsTable(props) {
           <tbody>
             {table
               .getRowModel()
-              .rows.slice(0, 5)
+              .rows.slice(0, 12)
               .map((row) => {
                 return (
                   <tr key={row.id}>

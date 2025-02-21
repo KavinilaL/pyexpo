@@ -19,15 +19,15 @@ export const columnsDataDevelopment = [
 
 export const columnsDataCheck = [
   {
-    Header: "NAME",
+    Header: "MONTH",
     accessor: "name",
   },
   {
-    Header: "PROGRESS",
+    Header: "USAGE",
     accessor: "progress",
   },
   {
-    Header: "QUANTITY",
+    Header: "AMMOUNT",
     accessor: "quantity",
   },
   {
@@ -38,15 +38,15 @@ export const columnsDataCheck = [
 
 export const columnsDataColumns = [
   {
-    Header: "NAME",
+    Header: "MONTH",
     accessor: "name",
   },
   {
-    Header: "PROGRESS",
+    Header: "USAGE",
     accessor: "progress",
   },
   {
-    Header: "QUANTITY",
+    Header: "AMMOUNT",
     accessor: "quantity",
   },
   {

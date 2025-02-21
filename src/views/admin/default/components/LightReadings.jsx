@@ -1,31 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "components/card";
 import LineChart from "components/charts/LineChart";
 
 const TotalSpent = () => {
-  const lineChartOptionsTotalSpent =  {
+  const [chartData, setChartData] = useState({
+    current: [],
+    voltage: []
+  });
+
+  useEffect(() => {
+    const eventSource = new EventSource('http://localhost:5000/stream');
+    
+    eventSource.onmessage = (event) => {
+      const newData = JSON.parse(event.data);
+      const timestamp = new Date(newData.timestamp).getTime();
+      
+      setChartData(prev => ({
+        current: [...prev.current.slice(-20), { x: timestamp, y: newData.current }],
+        voltage: [...prev.voltage.slice(-20), { x: timestamp, y: newData.voltage }]
+      }));
+    };
+
+    return () => eventSource.close();
+  }, []);
+
+  const lineChartOptionsTotalSpent = {
     legend: {
       show: false,
     },
-  
     theme: {
       mode: "light",
     },
     chart: {
       type: "line",
-  
-      toolbar: {
-        show: false,
-      },
+      toolbar: { show: false },
+      animations: { enabled: false }
     },
-  
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth",
-    },
-  
+    dataLabels: { enabled: false },
+    stroke: { curve: "smooth" },
     tooltip: {
       style: {
         fontSize: "12px",
@@ -33,59 +45,56 @@ const TotalSpent = () => {
         backgroundColor: "#000000"
       },
       theme: 'dark',
-      x: {
-        format: "dd/MM/yy HH:mm",
-      },
+      x: { format: "dd/MM/yy HH:mm:ss" },
     },
-    grid: {
-      show: false,
-    },
+    grid: { show: false },
     xaxis: {
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
+      type: "datetime",
       labels: {
         style: {
           colors: "#A3AED0",
           fontSize: "12px",
           fontWeight: "500",
         },
+        format: "HH:mm:ss",
+      }
+    },
+    yaxis: [
+      {
+        seriesName: 'Current',
+        show: true,
+        title: { text: "Current (A)" },
+        min: 0,
+        max: 30
       },
-      type: "text",
-      range: undefined,
-      categories: ["SEP", "OCT", "NOV", "DEC", "JAN", "FEB"],
-    },
-  
-    yaxis: {
-      show: false,
-    },
-  }
+      {
+        seriesName: 'Voltage',
+        show: true,
+        opposite: true,
+        title: { text: "Voltage (V)" },
+        min: 220,
+        max: 240
+      }
+    ]
+  };
 
   const lineChartDataTotalSpent = [
     {
-      name: "Revenue",
-      data: [50, 64, 48, 66, 49, 68],
+      name: "Current (A)",
+      data: chartData.current,
       color: "#4318FF",
     },
     {
-      name: "Profit",
-      data: [30, 40, 24, 46, 20, 46],
+      name: "Voltage (V)",
+      data: chartData.voltage,
       color: "#6AD2FF",
-    },
-  ]
+    }
+  ];
+
   return (
     <Card extra="!p-[20px] min-h-[400px] text-center">
       <h1 className="text-xl font-semibold">Light Readings</h1>
       <div className="flex h-full w-full flex-row justify-between sm:flex-wrap lg:flex-nowrap 2xl:overflow-hidden">
-        <div className="flex flex-col">
-          <div className="flex flex-col items-start">
-            <div className="flex flex-row items-center justify-center">
-            </div>
-          </div>
-        </div>
         <div className="h-full w-full">
           <LineChart
             options={lineChartOptionsTotalSpent}

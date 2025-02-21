@@ -38,7 +38,7 @@ const routes = [
     layout: "/admin",
     path: "emissions",
     icon: <MdPerson className="h-6 w-6" />,
-    component: <Profile />,
+    component: <NFTMarketplace />,
   },
   {
     name: "Profile",
