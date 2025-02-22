@@ -11,6 +11,7 @@ import {
   IoMdInformationCircleOutline,
 } from "react-icons/io";
 import avatar from "assets/img/avatars/avatar4.png";
+import LOGO from "assets/img/profile/LOGO.jpeg";
 
 const Navbar = (props) => {
   const { onOpenSidenav, brandText } = props;
@@ -180,7 +181,7 @@ const Navbar = (props) => {
           button={
             <img
               className="h-10 w-10 rounded-full"
-              src={avatar}
+              src={LOGO}
               alt="Elon Musk"
             />
           }
@@ -189,7 +190,7 @@ const Navbar = (props) => {
               <div className="p-4">
                 <div className="flex items-center gap-2">
                   <p className="text-sm font-bold text-navy-700 dark:text-white">
-                    👋 Hey, Adela
+                    👋 Hey, User!
                   </p>{" "}
                 </div>
               </div>
@@ -197,17 +198,12 @@ const Navbar = (props) => {
 
               <div className="flex flex-col p-4">
                 <a
-                  href=" "
+                  href="/admin/profile"
                   className="text-sm text-gray-800 dark:text-white hover:dark:text-white"
                 >
                   Profile Settings
                 </a>
-                <a
-                  href=" "
-                  className="mt-3 text-sm text-gray-800 dark:text-white hover:dark:text-white"
-                >
-                  Newsletter Settings
-                </a>
+               
                 <a
                   href=" "
                   className="mt-3 text-sm font-medium text-red-500 hover:text-red-500 transition duration-150 ease-out hover:ease-in"
